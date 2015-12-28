@@ -21,6 +21,10 @@ GraphicsSystem.prototype.tick = function() {
 
     // Clear the canvas
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    
+    this.context.save();
+    this.context.translate(this.canvas.width / 2, this.canvas.height);
+    this.context.scale(this.canvas.height, -this.canvas.height);
 
     // Rendering goes here
     for (var i=0; i<this.entities.length; i++) {
@@ -29,10 +33,12 @@ GraphicsSystem.prototype.tick = function() {
             continue;
         }
 
-        entity.components.graphics.draw(this.context,{x:12,y:50},1.1);
-         window.requestAnimationFrame(this.tick.bind(this));
-        
+        entity.components.graphics.draw(this.context);
+         
+
     }
+    this.context.restore();
+     window.requestAnimationFrame(this.tick.bind(this));
 };
 
 exports.GraphicsSystem = GraphicsSystem;
