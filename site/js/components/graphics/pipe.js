@@ -11,6 +11,15 @@ this.hsize = Math.random();
 
 PipeGraphicsComponent.prototype.draw = function(context) {
 	var position = this.entity.components.physics.position;
+
+	if (position.x < -1.8)	{
+		position.x = 1.3;
+
+		this.entity.components.physics.velocity.x = 0;
+		PipeGraphicsComponent.prototype.setPipeHeight() 
+	};
+
+
     context.save();
     context.translate(position.x, position.y); 
     context.beginPath();

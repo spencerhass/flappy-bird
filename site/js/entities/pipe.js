@@ -6,6 +6,8 @@ var Pipe = function(pos) {
 var physics = new physicsComponent.PhysicsComponent(this);
 physics.position.y = 0
 if (pos == "top"){physics.position.y = .6 }
+ physics.acceleration.x = -.3;
+
 var graphics = new graphicsComponent.PipeGraphicsComponent(this);
     this.components = {
     	graphics: graphics,
