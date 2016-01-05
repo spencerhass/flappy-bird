@@ -1,13 +1,10 @@
-var PipeGraphicsComponent = function(entity) {
+var PipeGraphicsComponent = function(entity, pipeH) {
 
     this.entity = entity;
-    PipeGraphicsComponent.prototype.setPipeHeight()
+    console.log('drawing pipe with height:' + pipeH);
+    this.hsize = pipeH;
 };
 
-PipeGraphicsComponent.prototype.setPipeHeight = function() {
-this.hsize = Math.random();
-	if (this.hsize >.45){this.hsize=.45}
-};
 
 PipeGraphicsComponent.prototype.draw = function(context) {
 	var position = this.entity.components.physics.position;
@@ -16,7 +13,7 @@ PipeGraphicsComponent.prototype.draw = function(context) {
 		position.x = 1.3;
 
 		this.entity.components.physics.velocity.x = 0;
-		PipeGraphicsComponent.prototype.setPipeHeight() 
+		//PipeGraphicsComponent.prototype.setPipeHeight() 
 	};
 
 
