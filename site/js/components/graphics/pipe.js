@@ -14,6 +14,7 @@ PipeGraphicsComponent.prototype.draw = function(context) {
 
 		this.entity.components.physics.velocity.x = 0;
 		//PipeGraphicsComponent.prototype.setPipeHeight() 
+		
 	};
 
 
